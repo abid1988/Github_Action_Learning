@@ -21,6 +21,8 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      - name: Verify Azure Login
+        run: az account show
 
       - name: HashiCorp - Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.3
