@@ -1,0 +1,25 @@
+name: "Terraform CD Workflow"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  TerraformWorkFlow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.0
+
+      - name: HashiCorp - Setup Terraform
+        uses: hashicorp/setup-terraform@v2.0.3
+
+      - name: Terraform Init 
+        run: terraform init
+        working-directory: ./terraform_infra
+
+      - name: Terraform Apply 
+        run: terraform apply --auto-approve
+        working-directory: ./terraform_infra
