@@ -13,6 +13,9 @@ jobs:
   Terraform-Workflow :
     runs-on: ubuntu-latest
     
+    environment:
+      name: Production
+      
     steps:
       - name: Azure login
         uses: azure/login@v3

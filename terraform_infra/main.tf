@@ -32,6 +32,6 @@ resource "azurerm_storage_account" "st" {
   account_replication_type = "LRS"
 
   tags = {
-    environment = "SYEDABID"
+    environment = "SYEDABIDALI"
   }
 }
