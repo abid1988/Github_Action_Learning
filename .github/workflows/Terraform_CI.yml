@@ -40,6 +40,15 @@ jobs:
         run: terraform validate
         working-directory: ./terraform_infra
 
+      - name: SonarQube Scan
+        shell: powershell
+        run:
+          sonar-scanner
+            -Dsonar.host.url="${{ secrets.SONAR_HOST_URL }}" `
+            -Dsonar.token="${{ secrets.SONAR_TOKEN }}"
+
+
+            
       - name: Terraform Plan
         run: terraform plan
         working-directory: ./terraform_infra
