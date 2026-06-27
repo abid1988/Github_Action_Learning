@@ -11,7 +11,7 @@ permissions:
   
 jobs:
   Terraform-Workflow :
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     environment:
       name: Production
